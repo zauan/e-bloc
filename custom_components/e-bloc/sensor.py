@@ -122,7 +122,7 @@ class EBlocHomeSensor(EBlocSensorBase):
             "Cod client": data.get("cod_client", "Necunoscut"),
             "Apartament": data.get("ap", "Necunoscut"),
             "Persoane declarate": data.get("nr_pers_afisat", "Necunoscut"),
-            "Datorie": f"{int(data.get('datorie', 0)) / 100:.2f} RON"
+            "Restanță de plată": f"{int(data.get('datorie', 0)) / 100:.2f} RON"
             if data.get("datorie") != "Necunoscut"
             else "Necunoscut",
             "Ultima zi de plată": data.get("ultima_zi_plata", "Necunoscut"),
