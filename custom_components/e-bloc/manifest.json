@@ -1,0 +1,14 @@
+{
+    "dependencies": [],
+    "requirements": [],
+    "iot_class": "cloud_polling",
+    "config_flow": true,
+    "domain": "e-bloc",
+    "name": "Integrare pentru e-bloc.ro",
+    "version": "1.0.0",
+    "documentation": "https://github.com/cnecrea/e-bloc",
+    "issue_tracker": "https://github.com/cnecrea/e-bloc/issues",
+    "codeowners": ["@cnecrea"],
+    "translations": "translations",
+    "platforms": ["sensor"]
+}

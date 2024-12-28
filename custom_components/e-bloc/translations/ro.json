@@ -1,0 +1,38 @@
+{
+    "title": "Integrare pentru e-bloc.ro",
+    "config": {
+        "step": {
+            "user": {
+                "title": "Configurează e-bloc.ro",
+                "description": "Introdu datele tale pentru a te conecta la e-bloc.ro.",
+                "data": {
+                    "pUser": "E-mail / Utilizator",
+                    "pPass": "Parolă",
+                    "pIdAsoc": "ID Asociație",
+                    "pIdAp": "ID Apartament"
+                }
+            }
+        },
+        "error": {
+            "invalid_auth": "Autentificare eșuată. Verifică acreditările introduse.",
+            "connection_error": "Eroare de conexiune. Verifică conexiunea la internet sau serverul e-bloc.ro."
+        },
+        "abort": {
+            "already_configured": "Contul este deja configurat."
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Opțiuni pentru e-bloc.ro",
+                "description": "Configurează opțiunile suplimentare.",
+                "data": {
+                    "pUser": "E-mail / Utilizator",
+                    "pPass": "Parolă",
+                    "pIdAsoc": "ID Asociație",
+                    "pIdAp": "ID Apartament"
+                }
+            }
+        }
+    }
+}
