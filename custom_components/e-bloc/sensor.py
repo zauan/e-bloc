@@ -119,21 +119,21 @@ class EBlocHomeSensor(EBlocSensorBase):
         data = self._coordinator.data.get("home", {}).get("1", {})
         self._attr_state = data.get("cod_client", "Necunoscut")
         self._attr_extra_state_attributes = {
-            "Cod client": data.get("cod_client", "Necunoscut"),
-            "Apartament": data.get("ap", "Necunoscut"),
-            "Persoane declarate": data.get("nr_pers_afisat", "Necunoscut"),
-            "Restanță de plată": f"{int(data.get('datorie', 0)) / 100:.2f} RON"
+            "cod_client": data.get("cod_client", "Necunoscut"),
+            "apartament": data.get("ap", "Necunoscut"),
+            "persoane_declarate": data.get("nr_pers_afisat", "Necunoscut"),
+            "restanta_de_plata": f"{int(data.get('datorie', 0)) / 100:.2f} RON"
             if data.get("datorie") != "Necunoscut"
             else "Necunoscut",
-            "Ultima zi de plată": data.get("ultima_zi_plata", "Necunoscut"),
-            "Contor trimis": "Da"
+            "ultima_zi_de_plata": data.get("ultima_zi_plata", "Necunoscut"),
+            "contor_trimis": "Da"
             if data.get("contoare_citite", "Necunoscut") == "1"
             else "Nu",
-            "Începere citire contoare": data.get("citire_contoare_start", "Necunoscut"),
-            "Încheiere citire contoare": data.get("citire_contoare_end", "Necunoscut"),
-            "Luna cu datoria cea mai veche": data.get("luna_veche", "Necunoscut"),
-            "Luna afișată": data.get("luna_afisata", "Necunoscut"),
-            "Nivel restanță": data.get("nivel_restanta", "Necunoscut"),
+            "incepere_citire_contoare": data.get("citire_contoare_start", "Necunoscut"),
+            "incheiere_citire_contoare": data.get("citire_contoare_end", "Necunoscut"),
+            "luna_cu_datoria_cea_mai_veche": data.get("luna_veche", "Necunoscut"),
+            "luna_afisata": data.get("luna_afisata", "Necunoscut"),
+            "nivel_restanta": data.get("nivel_restanta", "Necunoscut"),
         }
 
     @property
@@ -202,10 +202,10 @@ class EBlocContoareSensor(EBlocSensorBase):
 
         # Atribute suplimentare
         self._attr_extra_state_attributes = {
-            "Index vechi": f"{index_vechi} mc"
+            "index_vechi": f"{index_vechi} mc"
             if index_vechi != "Necunoscut"
             else "Necunoscut",
-            "Index nou": f"{index_nou} mc"
+            "index_nou": f"{index_nou} mc"
             if index_nou != "Necunoscut"
             else "",
         }
@@ -265,9 +265,9 @@ class EBlocPlatiChitanteSensor(EBlocSensorBase):
             suma_formatata = f"{int(suma) / 100:.2f} RON"
 
             # Formatul exact al atributelor (fără "Chitanță X")
-            atribute[f"Chitanță {idx}"] = numar
-            atribute[f"Data {idx}"] = data_chitanta
-            atribute[f"Sumă plătită {idx}"] = suma_formatata
+            atribute[f"chitanta {idx}"] = numar
+            atribute[f"data_{idx}"] = data_chitanta
+            atribute[f"suma_platita_{idx}"] = suma_formatata
 
         # Atribuim atributele suplimentare
         self._attr_extra_state_attributes = atribute
